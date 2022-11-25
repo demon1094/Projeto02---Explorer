@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap');
+
+/* ----------[RESETS PADRÕES]---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* ----------[HEADER]---------- */
+header {
+  width: 100%;
+  margin-bottom: 10rem;
+  padding: 2rem 20rem;
+  background: #eee;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header .navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+header .nav-link a {
+  font-size: 1.2rem;
+  color: #1F1534;
+  border-left: 3px solid transparent;
+  padding: 0rem 0.5rem;
+  transition: all 0.2s ease-out;
+}
+
+header .nav-link a:hover {
+  border-left: 3px solid #1F1534;
+}
+
+header .menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+header .menu-btn .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  margin: 5px auto;
+  background: #000;
+  transition: all 0.2s ease;
+}
+
+/* ----------[MAIN]---------- */
+main {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25rem;
+  padding: 5rem 20rem;
+  position: relative;
+  top: -5rem;
+}
+
+main .left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+
+main .left-side h2 {
+  font-size: 3.2rem;
+  font-weight: 500;
+}
+
+main .left-side h2 span {
+  font-weight: 800;
+  color: #89C5CC;
+}
+
+main .left-side p {
+  font-size: 1.05rem;
+  line-height: 2rem;
+  color: #7D7987;
+}
+
+main .left-side p span {
+  font-weight: 700;
+}
+
+main .left-side .wp-button {
+  width: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #fff;
+  transition: all 0.2s ease;
+  background: #69B99D;
+}
+
+main .left-side .wp-button:hover {
+  background: #81cfb4;
+}
+
+/* ----------[FOOTER]---------- */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  text-align: center;
+  font-weight: 500;
+  padding-bottom: 2rem;
+}
+
+footer p span {
+  font-weight: 800;
+}
+
+footer img {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* ----------[MEDIA QUERIES]---------- */
+@media screen and (max-width: 1730px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-gap: 3rem;
+  }
+  main .left-side {
+    align-items: center;
+  }
+  main .left-side h2 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  main .left-side p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  main .left-side .wp-button {
+    width: 15rem;
+    font-size: 1.5rem;
+  }
+  main .left-side .wp-button img {
+    width: 35px;
+  }
+}
+
+@media screen and (max-width: 1196px) {
+  header, main {
+    padding: 2rem 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .nav-bar {
+    width: 100vw;
+    height: 12vh;
+    justify-content: center;
+    position: absolute;
+    top: 5.8rem;
+    left: -200%;
+    /* border-radius: 0 0 30px 30px; */
+    transition: all 0.2s ease;
+    background: #eee;
+  }
+  header .nav-bar .nav-link {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: 700;
+    background: #ddd;
+  }
+  header .nav-bar.active {
+    left: 0;
+  }
+  header .menu-btn {
+    display: block;
+  }
+  header .menu-btn.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  header .menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  header .menu-btn.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  footer img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 572px) {
+  header, main {
+    padding: 1rem;
+  }
+  header .nav-bar {
+    top: 3.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    overflow-x: hidden;
+  }
+  header .nav-bar {
+    width: 100vw;
+    height: 40vh;
+    border-radius: 0;
+    flex-direction: column;
+    z-index: 100;
+    gap: 4rem;
+  }
+  header .nav-link a {
+    padding: 1rem 4rem;
+  }
+}
+
+@media screen and (max-width: 433px) {
+  main .left-side h2 {
+    font-size: 3rem;
+  }
+  main .left-side p {
+    font-size: 1.5rem;
+  }
+  main .right-side img {
+    width: 100%;
+  }
+  main .right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
